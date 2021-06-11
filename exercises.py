@@ -18,6 +18,17 @@ def sum_to(num):
 # largest([1, 2, 3, 4, 0])  # returns 4
 # largest([10, 4, 2, 231, 91, 54])  # returns 231
 
+def largest(nums):
+  largest = 0
+  for num in nums:
+    if num > largest:
+      largest = num 
+  return largest
+
+  def largest(nums):
+    nums.sort()
+    return nums[-1]
+
 #3. Write a function named occurances that takes two string arguments as input and counts the number of occurances of the second string inside the first string.
 
 # For example:
@@ -27,6 +38,9 @@ def sum_to(num):
 # occurances('fleep floop', 'ee')  # returns 1
 # occurances('fleep floop', 'fe')  # returns 0
 
+def occurances(word, subword):
+  return word.count(subword)
+
 #4. Write a function named product that takes an arbitrary number of numbers, multiplies them all together, and returns the product.
 # (HINT: Review your notes on *args).
 
@@ -35,3 +49,17 @@ def sum_to(num):
 # product(-1, 4) # returns -4
 # product(2, 5, 5) # returns 50
 # product(4, 0.5, 5) # returns 10.0
+
+def product(*args):
+  product = 1
+  for arg in args:
+    product *= arg
+  return product
+  
+### Notes
+#  Python Parameter specific (*args)
+# def f(*args): #// always after
+#   #what data type
+#   print( type(args) ) #gives us tuples
+#   for arg in args:
+#     print(arg)
